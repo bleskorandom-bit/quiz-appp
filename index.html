@@ -1,135 +1,109 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-<meta charset="UTF-8">
-<title>Quiz App</title>
-<style>
-body { font-family: Arial; background:#0f0f0f; color:white; text-align:center; }
-.container { margin:40px auto; max-width:400px; }
-button {
-  display:block; width:100%;
-  margin:8px 0; padding:12px;
-  background:#1e1e1e; color:white;
-  border:1px solid #444; cursor:pointer;
-}
-button:hover { background:#333; }
-.correct { color:#00ff88; }
-.wrong { color:#ff4d4d; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Pro Ultra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="bg">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <div class="grid"></div>
+    <div class="particles"></div>
+  </div>
 
-<div class="container">
-<h2 id="question"></h2>
-<div id="answers"></div>
-<p id="result"></p>
-<p id="score"></p>
-<button onclick="nextQuestion()">Next</button>
-</div>
+  <main class="app">
+    <section class="screen active fade-up" id="startScreen">
+      <div class="glass hero-card">
+        <div class="top-badge">SUPER QUIZ SITE</div>
+        <h1>Axborot texnologiyalari testi</h1>
+        <p class="subtitle">
+          Premium animatsiya, progress bar, timer, score va final result bilan.
+        </p>
 
-<script>
+        <div class="hero-stats">
+          <div class="mini-card">
+            <span>Savollar</span>
+            <strong>10 ta</strong>
+          </div>
+          <div class="mini-card">
+            <span>Vaqt</span>
+            <strong>15 sek</strong>
+          </div>
+          <div class="mini-card">
+            <span>Rejim</span>
+            <strong>Pro</strong>
+          </div>
+        </div>
 
-const quiz = [
-{q:"OT interfeys?",a:["Panel","Taskbar","Ish stoli","My computer"],c:2},
-{q:"Raqamli axborot?",a:["Analog","Diskret","Subyektiv","Obyektiv"],c:1},
-{q:"Kompyuter yuragi?",a:["RAM","HDD","CPU","Monitor"],c:2},
-{q:"Vaqtincha xotira?",a:["HDD","ROM","RAM","DVD"],c:2},
-{q:"Drayver?",a:["O‘yin","Xizmat dasturi","Virus","Fayl"],c:1},
-{q:"Kiritish qurilmasi?",a:["Printer","Monitor","Klaviatura","Speaker"],c:2},
-{q:"Asosiy saqlash?",a:["CPU","HDD","RAM","GPU"],c:1},
-{q:"Elektron hujjat?",a:["Matn","Audio","Elektron","Rasm"],c:2},
-{q:"Axborot nima?",a:["Internet","Ma’lumot","Video","Rasm"],c:1},
-{q:"Texnologiya?",a:["San’at","Usullar","O‘yin","Internet"],c:1},
+        <button class="primary-btn glow-btn" id="startBtn">Boshlash</button>
+      </div>
+    </section>
 
-// 40 ta qo‘shimcha savol
-{q:"CPU nima?",a:["Xotira","Protsessor","Disk","Monitor"],c:1},
-{q:"RAM nima?",a:["Disk","Tezkor xotira","Printer","Video"],c:1},
-{q:"HDD nima?",a:["Protsessor","Disk","Monitor","RAM"],c:1},
-{q:"Printer nima?",a:["Kiritish","Chiqarish","Xotira","CPU"],c:1},
-{q:"Scanner nima?",a:["Chiqarish","Kiritish","Disk","RAM"],c:1},
-{q:"Monitor nima?",a:["Kiritish","Chiqarish","CPU","Disk"],c:1},
-{q:"USB nima?",a:["Port","CPU","RAM","Disk"],c:0},
-{q:"Modem nima?",a:["Internet qurilma","Disk","CPU","RAM"],c:0},
-{q:"WiFi nima?",a:["Internet","Disk","RAM","CPU"],c:0},
-{q:"Bluetooth nima?",a:["Aloqa","Disk","CPU","RAM"],c:0},
+    <section class="screen" id="quizScreen">
+      <div class="glass quiz-card">
+        <div class="quiz-top">
+          <div class="pill" id="questionCount">1 / 10</div>
+          <div class="timer-wrap">
+            <span>Vaqt</span>
+            <div class="timer" id="timer">15</div>
+          </div>
+        </div>
 
-{q:"Server nima?",a:["Kompyuter","Telefon","Printer","Monitor"],c:0},
-{q:"Notebook?",a:["Laptop","Printer","Disk","CPU"],c:0},
-{q:"Planshet?",a:["Mobil qurilma","Printer","Disk","CPU"],c:0},
-{q:"Smartfon?",a:["Telefon","Disk","CPU","RAM"],c:0},
-{q:"OS nima?",a:["Tizim","O‘yin","Disk","CPU"],c:0},
+        <div class="progress-wrap">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
 
-{q:"Windows?",a:["OS","O‘yin","Disk","CPU"],c:0},
-{q:"Linux?",a:["OS","Disk","CPU","RAM"],c:0},
-{q:"Android?",a:["OS","Disk","CPU","RAM"],c:0},
-{q:"iOS?",a:["OS","Disk","CPU","RAM"],c:0},
-{q:"BIOS?",a:["Tizim","Disk","CPU","RAM"],c:0},
+        <h2 class="question fade-switch" id="questionText">Savol</h2>
 
-{q:"GPU?",a:["Grafika","Disk","CPU","RAM"],c:0},
-{q:"LAN?",a:["Tarmoq","Disk","CPU","RAM"],c:0},
-{q:"WAN?",a:["Tarmoq","Disk","CPU","RAM"],c:0},
-{q:"HTML?",a:["Til","Disk","CPU","RAM"],c:0},
-{q:"CSS?",a:["Dizayn","Disk","CPU","RAM"],c:0},
+        <div class="answers" id="answersBox"></div>
 
-{q:"JS?",a:["Kod","Disk","CPU","RAM"],c:0},
-{q:"Email?",a:["Xat","Disk","CPU","RAM"],c:0},
-{q:"Browser?",a:["Dastur","Disk","CPU","RAM"],c:0},
-{q:"Google?",a:["Qidiruv","Disk","CPU","RAM"],c:0},
-{q:"YouTube?",a:["Video","Disk","CPU","RAM"],c:0},
+        <div class="bottom-row">
+          <div class="live-score">Ball: <span id="liveScore">0</span></div>
+          <button class="secondary-btn" id="nextBtn" disabled>Keyingi</button>
+        </div>
+      </div>
+    </section>
 
-{q:"PDF?",a:["Format","Disk","CPU","RAM"],c:0},
-{q:"DOC?",a:["Format","Disk","CPU","RAM"],c:0},
-{q:"Excel?",a:["Dastur","Disk","CPU","RAM"],c:0},
-{q:"PowerPoint?",a:["Dastur","Disk","CPU","RAM"],c:0},
-{q:"Antivirus?",a:["Himoya","Disk","CPU","RAM"],c:0},
+    <section class="screen" id="resultScreen">
+      <div class="glass result-card pop-in">
+        <div class="result-ring">
+          <div class="result-ring-inner">
+            <span id="finalPercent">0%</span>
+          </div>
+        </div>
 
-{q:"Virus?",a:["Xavf","Disk","CPU","RAM"],c:0},
-{q:"Cloud?",a:["Saqlash","Disk","CPU","RAM"],c:0},
-{q:"Database?",a:["Ma’lumot","Disk","CPU","RAM"],c:0},
-{q:"AI?",a:["Sun’iy intellekt","Disk","CPU","RAM"],c:0},
-{q:"Robot?",a:["Mashina","Disk","CPU","RAM"],c:0}
-];
+        <h2 id="resultTitle">Natija</h2>
+        <p class="result-text" id="resultText">Sening natijang shu yerda chiqadi.</p>
 
-let current = 0;
-let score = 0;
+        <div class="result-stats">
+          <div class="mini-card">
+            <span>To‘g‘ri</span>
+            <strong id="correctCount">0</strong>
+          </div>
+          <div class="mini-card">
+            <span>Jami</span>
+            <strong id="totalCount">10</strong>
+          </div>
+          <div class="mini-card">
+            <span>Daraja</span>
+            <strong id="levelText">Beginner</strong>
+          </div>
+        </div>
 
-function loadQuestion(){
-let q = quiz[current];
-document.getElementById("question").innerText = `${current+1}/50: ` + q.q;
+        <div class="result-actions">
+          <button class="primary-btn glow-btn" id="restartBtn">Qayta boshlash</button>
+        </div>
+      </div>
+    </section>
+  </main>
 
-let html="";
-q.a.forEach((ans,i)=>{
-html += `<button onclick="check(${i})">${ans}</button>`;
-});
-document.getElementById("answers").innerHTML = html;
-document.getElementById("result").innerHTML="";
-}
-
-function check(i){
-let correct = quiz[current].c;
-if(i===correct){
-score++;
-document.getElementById("result").innerHTML="<span class='correct'>To‘g‘ri ✅</span>";
-}else{
-document.getElementById("result").innerHTML="<span class='wrong'>Noto‘g‘ri ❌</span>";
-}
-document.getElementById("score").innerText="Score: "+score;
-}
-
-function nextQuestion(){
-current++;
-if(current>=quiz.length){
-document.getElementById("question").innerText="Tugatding 🎉";
-document.getElementById("answers").innerHTML="";
-document.getElementById("result").innerHTML="Final Score: "+score+"/50";
-}else{
-loadQuestion();
-}
-}
-
-loadQuestion();
-
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
