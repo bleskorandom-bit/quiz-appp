@@ -1,0 +1,2 @@
+# quiz-appp
+axborot xavfsizligi 
