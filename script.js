@@ -48,6 +48,206 @@ const questions = [
     question: "Scaner qanday qurilma?",
     answers: ["Chiqarish", "Kiritish", "Saqlash", "Hisoblash"],
     correct: 1
+  },
+  {
+    question: "CPU nima?",
+    answers: ["Xotira", "Protsessor", "Monitor", "Port"],
+    correct: 1
+  },
+  {
+    question: "RAM nima?",
+    answers: ["Doimiy xotira", "Tezkor xotira", "Disk", "Printer"],
+    correct: 1
+  },
+  {
+    question: "HDD nima?",
+    answers: ["Qattiq disk", "Monitor", "Printer", "Operatsion tizim"],
+    correct: 0
+  },
+  {
+    question: "Printer qanday qurilma?",
+    answers: ["Kiritish", "Chiqarish", "Saqlash", "Hisoblash"],
+    correct: 1
+  },
+  {
+    question: "Monitor qanday qurilma?",
+    answers: ["Kiritish", "Chiqarish", "Aloqa", "Saqlash"],
+    correct: 1
+  },
+  {
+    question: "Modem nima uchun ishlatiladi?",
+    answers: ["Ovoz chiqarish", "Internetga ulash", "Rasm chizish", "Matn yozish"],
+    correct: 1
+  },
+  {
+    question: "USB nima?",
+    answers: ["Port", "Operatsion tizim", "Brauzer", "Virus"],
+    correct: 0
+  },
+  {
+    question: "Wi-Fi nima?",
+    answers: ["Simsiz tarmoq", "Disk turi", "Xotira", "Monitor"],
+    correct: 0
+  },
+  {
+    question: "Bluetooth nima?",
+    answers: ["Simsiz aloqa", "Printer drayveri", "Qattiq disk", "Antivirus"],
+    correct: 0
+  },
+  {
+    question: "Server nima?",
+    answers: ["Ma’lumot va xizmatlarni taqdim qiluvchi kompyuter", "Faqat telefon", "Printer", "Kabel"],
+    correct: 0
+  },
+  {
+    question: "Notebook nima?",
+    answers: ["Noutbuk", "Skaner", "Disk", "Brauzer"],
+    correct: 0
+  },
+  {
+    question: "Planshet nima?",
+    answers: ["Mobil qurilma", "Printer", "Karta", "Modem"],
+    correct: 0
+  },
+  {
+    question: "Smartfon nima?",
+    answers: ["Aqlli telefon", "Qattiq disk", "Ona plata", "Brauzer"],
+    correct: 0
+  },
+  {
+    question: "OS nimani anglatadi?",
+    answers: ["Operatsion tizim", "Optik skaner", "Onlayn servis", "Open storage"],
+    correct: 0
+  },
+  {
+    question: "Windows bu —",
+    answers: ["Operatsion tizim", "Brauzer", "Kompyuter turi", "Virus"],
+    correct: 0
+  },
+  {
+    question: "Linux bu —",
+    answers: ["Operatsion tizim", "Printer", "Qattiq disk", "Port"],
+    correct: 0
+  },
+  {
+    question: "Android bu —",
+    answers: ["Mobil operatsion tizim", "Disk", "Skaner", "Monitor"],
+    correct: 0
+  },
+  {
+    question: "iOS bu —",
+    answers: ["Mobil operatsion tizim", "Brauzer", "Wi-Fi", "RAM"],
+    correct: 0
+  },
+  {
+    question: "BIOS nima?",
+    answers: ["Boshlang‘ich tizim dasturi", "Brauzer", "Antivirus", "Rasm formati"],
+    correct: 0
+  },
+  {
+    question: "GPU nima?",
+    answers: ["Grafik protsessor", "Asosiy xotira", "Port", "Virus"],
+    correct: 0
+  },
+  {
+    question: "LAN nimani anglatadi?",
+    answers: ["Mahalliy tarmoq", "Global tarmoq", "Disk turi", "Elektron hujjat"],
+    correct: 0
+  },
+  {
+    question: "WAN nimani anglatadi?",
+    answers: ["Global/keng tarmoq", "Printer turi", "RAM", "Port"],
+    correct: 0
+  },
+  {
+    question: "HTML nima?",
+    answers: ["Belgilash tili", "Operatsion tizim", "Antivirus", "Server"],
+    correct: 0
+  },
+  {
+    question: "CSS nima uchun ishlatiladi?",
+    answers: ["Dizayn va uslub berish", "Ma’lumot saqlash", "Internetga ulash", "Xatolik topish"],
+    correct: 0
+  },
+  {
+    question: "JavaScript nima uchun ishlatiladi?",
+    answers: ["Interaktivlik qo‘shish", "Faqat rasm chizish", "Kompyuter yig‘ish", "Disk formatlash"],
+    correct: 0
+  },
+  {
+    question: "Email bu —",
+    answers: ["Elektron pochta", "Disk xotira", "Telefon turi", "Grafik karta"],
+    correct: 0
+  },
+  {
+    question: "Browser nima?",
+    answers: ["Veb brauzer", "Qattiq disk", "Printer", "Tarmoq kabeli"],
+    correct: 0
+  },
+  {
+    question: "Google asosan nima?",
+    answers: ["Qidiruv tizimi", "Operatsion tizim", "Telefon turi", "Qattiq disk"],
+    correct: 0
+  },
+  {
+    question: "YouTube nima?",
+    answers: ["Video platforma", "Antivirus", "Disk turi", "Brauzer"],
+    correct: 0
+  },
+  {
+    question: "PDF bu —",
+    answers: ["Fayl formati", "Operatsion tizim", "Monitor", "Kiritish qurilmasi"],
+    correct: 0
+  },
+  {
+    question: "DOC bu —",
+    answers: ["Hujjat formati", "Grafik karta", "Qattiq disk", "Brauzer"],
+    correct: 0
+  },
+  {
+    question: "Excel nima?",
+    answers: ["Jadval dasturi", "Brauzer", "Printer", "Server"],
+    correct: 0
+  },
+  {
+    question: "PowerPoint nima?",
+    answers: ["Taqdimot dasturi", "Antivirus", "Disk", "Klaviatura"],
+    correct: 0
+  },
+  {
+    question: "Antivirus nima qiladi?",
+    answers: ["Zararli dasturlardan himoya qiladi", "Internetga ulaydi", "Matn yozadi", "Rasm chiqaradi"],
+    correct: 0
+  },
+  {
+    question: "Virus nima?",
+    answers: ["Zararli dastur", "Fayl papkasi", "Monitor turi", "Tarmoq porti"],
+    correct: 0
+  },
+  {
+    question: "Cloud storage nima?",
+    answers: ["Bulutli saqlash", "Printer turi", "RAM", "CPU"],
+    correct: 0
+  },
+  {
+    question: "Database nima?",
+    answers: ["Ma’lumotlar bazasi", "Grafik editor", "Qattiq disk", "Simsiz aloqa"],
+    correct: 0
+  },
+  {
+    question: "AI nimani anglatadi?",
+    answers: ["Sun’iy intellekt", "Avtomatik internet", "Asosiy interfeys", "Arxiv fayl"],
+    correct: 0
+  },
+  {
+    question: "Robot bu —",
+    answers: ["Dasturlashtirilgan qurilma", "Operatsion tizim", "Brauzer", "Hujjat turi"],
+    correct: 0
+  },
+  {
+    question: "Ona plata nima?",
+    answers: ["Asosiy elektron plata", "Printer qismi", "Brauzer turi", "Skaner qismi"],
+    correct: 0
   }
 ];
 
@@ -98,6 +298,7 @@ function loadQuestion() {
   nextBtn.disabled = true;
   timeLeft = 15;
   timerEl.textContent = timeLeft;
+  timerEl.style.color = "#ffffff";
 
   const currentQuestion = questions[currentIndex];
   questionCount.textContent = `${currentIndex + 1} / ${questions.length}`;
@@ -106,11 +307,10 @@ function loadQuestion() {
   void questionText.offsetWidth;
   questionText.classList.add("fade-switch");
 
-  const progress = ((currentIndex) / questions.length) * 100;
+  const progress = (currentIndex / questions.length) * 100;
   progressBar.style.width = `${progress}%`;
 
   answersBox.innerHTML = "";
-
   const letters = ["A", "B", "C", "D"];
 
   currentQuestion.answers.forEach((answer, index) => {
@@ -154,7 +354,6 @@ function selectAnswer(selectedIndex, button) {
 
   buttons.forEach((btn, index) => {
     btn.disabled = true;
-
     if (index === currentQuestion.correct) {
       btn.classList.add("correct");
     }
